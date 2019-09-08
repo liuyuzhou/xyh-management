@@ -1,0 +1,21 @@
+@layout("/common/_container.html",{bg:"bg-white",title:"概览"}){
+<div style="padding: 20px;">
+    @for(notice in noticeList){
+    <blockquote class="layui-elem-quote">
+        <fieldset class="layui-elem-field">
+            <legend>${notice.title}</legend> 
+            <legend>${notice.address}</legend> 
+            <legend>${notice.meetingPlace}</legend> 
+            <legend>${notice.actTime}</legend> 
+            <legend>${notice.endTime}</legend> 
+            <legend>${notice.actCreator}</legend> 
+            <div class="layui-field-box">
+                ${notice.content}
+            </div>
+            <legend>${notice.participateNum}</legend>
+            <legend>${notice.cost}</legend>
+        </fieldset>
+    </blockquote>
+    @}
+</div>
+@}

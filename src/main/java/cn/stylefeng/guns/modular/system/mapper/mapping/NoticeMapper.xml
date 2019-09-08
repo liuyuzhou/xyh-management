@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.system.mapper.NoticeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.system.entity.Notice">
+        <id column="activate_id" property="activateId" jdbcType="INTEGER" />
+    	<result column="title" property="title" jdbcType="VARCHAR" />
+    	<result column="address" property="address" jdbcType="VARCHAR" />
+    	<result column="act_time" property="actTime" jdbcType="TIMESTAMP" />
+    	<result column="end_time" property="endTime" jdbcType="TIMESTAMP" />
+    	<result column="act_creator" property="actCreator" jdbcType="VARCHAR" />
+    	<result column="meeting_place" property="meetingPlace" jdbcType="VARCHAR" />
+    	<result column="content" property="content" jdbcType="VARCHAR" />
+    	<result column="participate_num" property="participateNum" jdbcType="INTEGER" />
+    	<result column="cur_participate_num" property="curParticipateNum" jdbcType="INTEGER" />
+    	<result column="cost" property="cost" jdbcType="DOUBLE" />
+    	<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    	<result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    </resultMap>
+  
+  <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        activate_id AS "activateId", title AS "title", address AS "address", act_time AS "actTime", end_time AS "endTime", act_creator AS "actCreator", meeting_place AS "meetingPlace", content AS "content", participate_num AS "participateNum", cur_participate_num AS "curParticipateNum", cost AS "cost", create_time AS "createTime", update_time AS "updateTime"
+    </sql>
+
+    <select id="list" resultType="map">
+        select
+        <include refid="Base_Column_List"></include>
+        from activate_info
+        <if test="condition != null and condition != ''">
+            where title like CONCAT('%',#{condition},'%') or content like CONCAT('%',#{condition},'%')
+        </if>
+        order by create_time DESC
+    </select>
+  
+  
+</mapper>
