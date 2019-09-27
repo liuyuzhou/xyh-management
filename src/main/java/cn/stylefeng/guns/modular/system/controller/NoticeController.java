@@ -15,20 +15,21 @@
  */
 package cn.stylefeng.guns.modular.system.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
 
+import cn.stylefeng.guns.core.util.DateConver;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
-import cn.hutool.core.bean.BeanUtil;
 import cn.stylefeng.guns.core.common.annotion.BussinessLog;
 import cn.stylefeng.guns.core.common.constant.dictmap.DeleteDict;
 import cn.stylefeng.guns.core.common.constant.dictmap.NoticeMap;
@@ -55,6 +56,12 @@ import cn.stylefeng.roses.kernel.model.exception.ServiceException;
 public class NoticeController extends BaseController {
 
 	private String PREFIX = "/modular/system/notice/";
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+		SimpleDateFormat datetimeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		datetimeFormat.setLenient(false);
+		binder.registerCustomEditor(Date.class, new CustomDateEditor(datetimeFormat, false));
+	}
 
 	@Autowired
 	private NoticeService noticeService;
@@ -90,7 +97,7 @@ public class NoticeController extends BaseController {
 	@RequestMapping("/notice_update/{noticeId}")
 	public String noticeUpdate(@PathVariable Long noticeId, Model model) {
 		Notice notice = this.noticeService.getById(noticeId);
-		model.addAllAttributes(BeanUtil.beanToMap(notice));
+		model.addAllAttributes(DateConver.beanToMap(notice));
 		LogObjectHolder.me().set(notice);
 		return PREFIX + "notice_edit.html";
 	}
@@ -166,8 +173,10 @@ public class NoticeController extends BaseController {
 		}
 		Notice old = this.noticeService.getById(notice.getActivateId());
 		old.setTitle(notice.getTitle());
+		old.setAddress(notice.getAddress());
 		old.setActTime(notice.getActTime());
 		old.setEndTime(notice.getEndTime());
+		old.setMeetingPlace(notice.getMeetingPlace());
 		old.setActCreator(notice.getActCreator());
 		old.setContent(notice.getContent());
 		old.setParticipateNum(notice.getParticipateNum());

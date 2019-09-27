@@ -22,7 +22,7 @@
     <div class="layui-form-item">
         <label class="layui-form-label">活动开始时间<span style="color: red;">*</span></label>
         <div class="layui-input-block">
-            <input name="actTime" value="${actTime}" placeholder="请输入活动开始时间" type="text" class="layui-input" lay-verify="required" required/>
+            <input name="actTime" value="${actTime}" id="actTime" placeholder="请输入活动开始时间" type="text" class="layui-input" lay-verify="required" required/>
         </div>
     </div>
     <div class="layui-form-item">
@@ -49,9 +49,19 @@
             <input name="cost" value="${cost}" placeholder="请输入费用" type="text" class="layui-input" lay-verify="required" required/>
         </div>
     </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">创建人<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input name="actCreator" value="${actCreator}" placeholder="创建人" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+
+
     <div class="layui-form-item text-right">
         <button class="layui-btn layui-btn-primary" type="button" ew-event="closeDialog">取消</button>
         <button class="layui-btn" lay-filter="btnSubmit" lay-submit>保存</button>
     </div>
 </form>
+
 @}

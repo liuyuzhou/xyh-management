@@ -42,6 +42,7 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import java.util.Arrays;
 import java.util.Properties;
 
 import static cn.stylefeng.guns.core.common.constant.Const.NONE_PERMISSION_RES;
@@ -161,8 +162,8 @@ public class WebConfig implements WebMvcConfigurer {
     @Bean
     public FilterRegistrationBean xssFilterRegistration() {
         XssFilter xssFilter = new XssFilter();
-        // 这里可以加不被xss过滤的接口
-        // xssFilter.setUrlExclusion(Arrays.asList("/notice/update", "/notice/add"));
+        // 这里可以加不被xss过滤的接口(用户页面的html原样展示)
+         xssFilter.setUrlExclusion(Arrays.asList("/notice/update", "/notice/add"));
         FilterRegistrationBean registration = new FilterRegistrationBean(xssFilter);
         registration.addUrlPatterns("/*");
         return registration;
