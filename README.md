@@ -1,73 +1,18 @@
-<p align="center">
-    <img src="https://images.gitee.com/uploads/images/2019/0109/214218_d2aa949b_551203.png" width="300">
-    <br>      
-    <br>      
-    <p align="center">
-        Guns基于Spring Boot2，致力于做更简洁的后台管理系统。包含系统管理，代码生成，多数据库适配，SSO单点登录，工作流，短信，邮件发送，OAuth2登录，任务调度，持续集成，docker部署等功。支持Spring Cloud Alibaba微服务。社区活跃，版本迭代快，加群免费技术支持。
-        <br>      
-        <br>      
-        <span>
-            <span>
-                Guns官方交流群：254550081(满)   684163663(满)   207434260(满)(三个群已满，扫下方二维码加官方微信群)
-            </span>
-        </span>
-        <br>
-        <br>
-        <a href="https://getbootstrap.com/">
-            <img src="https://img.shields.io/badge/easyweb-3.1.1-green.svg" alt="bootstrap">
-        </a> 
-        <a href="https://getbootstrap.com/">
-            <img src="https://img.shields.io/badge/layui-2.4.5-blue.svg" alt="bootstrap">
-        </a>  
-        +
-        <a href="http://spring.io/projects/spring-boot">
-            <img src="https://img.shields.io/badge/spring--boot-2.1.1-green.svg" alt="spring-boot">
-        </a>
-        <a href="http://mp.baomidou.com">
-            <img src="https://img.shields.io/badge/mybatis--plus-3.0-blue.svg" alt="mybatis-plus">
-        </a>  
-        <a href="http://ibeetl.com/">
-            <img src="https://img.shields.io/badge/beetl-2.9.3-yellow.svg" alt="beetl">
-        </a> 
-        <a href="https://shiro.apache.org/">
-            <img src="https://img.shields.io/badge/shiro-1.4.0-blue.svg" alt="shiro">
-        </a>      
-    </p>
-</p>
 
 -----------------------------------------------------------------------------------------------
-
+### 打包说明默认dev环境
+```$xslt
+@spring.active@
+<profile>
+    <id>dev</id>
+     <properties>
+     <spring.active>dev</spring.active>
+     </properties>
+</profile>
+```
+# 以下是原作者信息，如不需要请忽略
 ### 在线demo
 * 账号密码：admin/111111，地址：http://demo.stylefeng.cn
-* 阿里云5折优惠券，[点我领取](https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=p4kqz45e)
-
-### 扫码关注官方公众号和官方微信群
-<table>
-    <tr>
-        <td>官方公众号</td>
-        <td><img src="https://images.gitee.com/uploads/images/2019/0415/104911_9bc924a5_551203.png" width="120"/></td>
-        <td>扫码邀请入群</td>
-        <td><img src="https://images.gitee.com/uploads/images/2019/0419/103622_d6e9fa5d_551203.png" width="120"/></td>
-    </tr>
-</table>
-
-### Guns版本说明
-
-| 版本名称 | 说明 | 地址 |
-| :---: | :---: | :---: |
-| Guns旗舰版 v2.5 | 最新开源版本，master分支 | https://gitee.com/stylefeng/guns |
-| Guns v5.1 | Guns经典版的最新版，采用bootstrap 3 | https://gitee.com/stylefeng/guns/tree/v5.1-final |
-
-### Guns 企业版
-* 企业级，功能更强大，创新代码生成，高级sso，微服务，容器化部署等，详情点击[https://www.stylefeng.cn](https://www.stylefeng.cn)
-* 买企业版送最新Guns技术文档和视频教程，[点击查看技术文档](https://gitee.com/stylefeng/guns/wikis/pages?title=Guns%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3&parent=)，[点击查看视频教程](https://gitee.com/stylefeng/guns/wikis/pages?title=Guns%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B&parent=)
-
-### Guns&Roses架构师视频
-* 深入了解Guns的核心，spring cloud微服务，docker等技术，详情点击[https://www.stylefeng.cn/video/roses](https://www.stylefeng.cn/video/roses)
-
-
-### 版权声明
-* Guns采用定制协议：您可以随意下载，学习，或使用Guns，但禁止二次包装出售以及任何商业行为，如需商用请[购买授权](https://www.stylefeng.cn)。
 
 ### Guns前端模板
 * Guns最新旗舰版，所用前端模板为EasyWeb后台开发框架,官网地址为：[https://easyweb.vip/](https://easyweb.vip/)，使用时已征求作者允许。
@@ -181,38 +126,6 @@ jwt token鉴权机制是指若需要请求服务器接口，必须通过AuthCont
 
 ### 签名机制
 签名机制是指客户端向服务端传输数据中，对传输数据进行md5加密，并且加密过程中利用Auth接口返回的随机字符串进行混淆加密，并把md5值同时附带给服务端，服务端通获取数据之后对数据再进行一次md5加密，若加密结果和客户端传来的数据一致，则认定客户端请求的数据是没有被篡改的，若不一致，则认为被加密的数据是被篡改的
-
-### Guns经典版效果图
-<table>
-    <tr>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0604/194616_36ed7fd6_551203.png"/></td>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0604/194623_a0761bc3_551203.png"/></td>
-    </tr>
-    <tr>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0604/194630_640dfd35_551203.png"/></td>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0526/104015_bdb14c74_551203.png"/></td>
-    </tr>
-    <tr>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0516/000735_b83c5c46_551203.png"/></td>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0526/103734_bd3e8f6b_551203.png"/></td>
-    </tr>
-    <tr>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0604/194539_f9bb482a_551203.png"/></td>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0526/103746_6b4129ed_551203.png"/></td>
-    </tr>
-    <tr>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0526/103755_7729b916_551203.png"/></td>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0526/103801_b8216865_551203.png"/></td>
-    </tr>
-    <tr>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0526/103807_20bfb868_551203.png"/></td>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0526/103814_67e078bb_551203.png"/></td>
-    </tr>
-    <tr>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0526/103822_58fd5d91_551203.png"/></td>
-        <td><img src="https://git.oschina.net/uploads/images/2017/0526/103827_d6218c74_551203.png"/></td>
-    </tr>
-</table>
 
 ### stylefeng开源技术
 
