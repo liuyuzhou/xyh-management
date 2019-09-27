@@ -1,15 +1,7 @@
 
 -----------------------------------------------------------------------------------------------
-### 打包说明默认dev环境
-```$xslt
-@spring.active@
-<profile>
-    <id>dev</id>
-     <properties>
-     <spring.active>dev</spring.active>
-     </properties>
-</profile>
-```
+### 打包说明默认local环境
+
 # 以下是原作者信息，如不需要请忽略
 ### 在线demo
 * 账号密码：admin/111111，地址：http://demo.stylefeng.cn
