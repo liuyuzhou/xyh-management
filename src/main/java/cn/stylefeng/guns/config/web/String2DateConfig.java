@@ -42,12 +42,12 @@ public class String2DateConfig {
     public class StringToDateConverter implements Converter<String, Date> {
         @Override
         public Date convert(String dateString) {
-            if (dateString.contains("CST")){
-                Date time =new Date(dateString);
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                String timeFormat = sdf.format(time);
-                return new DateTime(timeFormat, DatePattern.NORM_DATETIME_FORMAT);
-            }
+//            if (dateString.contains("CST")){
+//                Date time =new Date(dateString);
+//                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//                String timeFormat = sdf.format(time);
+//                return new DateTime(timeFormat, DatePattern.NORM_DATETIME_FORMAT);
+//            }
             return DateUtil.parse(dateString);
         }
     }

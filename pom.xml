@@ -41,6 +41,18 @@
             <groupId>cn.stylefeng.roses</groupId>
             <artifactId>kernel-core</artifactId>
             <version>1.2.2</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>cn.hutool</groupId>
+                    <artifactId>hutool-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- 使用最新的时间解析包-->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-core</artifactId>
+            <version>4.6.8</version>
         </dependency>
 
         <!--数据库驱动,可根据自己需要自行删减-->
